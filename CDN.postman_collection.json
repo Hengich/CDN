@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "b8b801d8-4eb9-46b6-b7f2-58b1bf60a98c",
+		"name": "CDN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36791326"
+	},
+	"item": [
+		{
+			"name": "Получение информации о добавленных городах",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление нового города",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Тверь\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cities/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cities",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск двух ближайших городов по координатам",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cities/nearest/?latitude=55.7558&longitude=37.6173",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cities",
+						"nearest",
+						""
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "55.7558"
+						},
+						{
+							"key": "longitude",
+							"value": "37.6173"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
